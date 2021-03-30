@@ -1,0 +1,64 @@
+{
+  "normas": [
+    {
+      "id": 1,
+      "codigo": "ABNT NBR 15800/2009",
+      "descricao": "Vestuário – Referenciais de medidas do corpo humano – Vestibilidade de roupas para bebê e infanto-juvenil",
+      "status": "Em Vigor"
+    },
+    {
+      "id": 2,
+      "codigo": "ABNT NBR 9925:2009",
+      "descricao": "Tecido plano - Determinação do esgarçamento em uma costura padrão",
+      "status": "Em Vigor"
+    },
+    {
+      "id": 3,
+      "codigo": "ABNT NBR 15778:2009",
+      "descricao": "Uniforme escolar - Requisitos de desempenho e segurança",
+      "status": "Em Vigor"
+    },
+    {
+      "id": 4,
+      "codigo": "ABNT NBR ISO 105-E03:2009",
+      "descricao": "Têxteis - Ensaios de solidez da cor. Parte E03: Solidez da cor à água clorada (água de piscina)",
+      "status": "Em Vigor"
+    },
+    {
+      "id": 5,
+      "codigo": "ABNT NBR ISO 105-E04:2009",
+      "descricao": "Têxteis - Ensaios de solidez da cor. Parte E04: Solidez da cor ao suor",
+      "status": "Em Vigor"
+    },
+    {
+      "id": 6,
+      "codigo": "ABNT NBR ISO 105-E05:2009",
+      "descricao": "Têxteis - Ensaios de solidez da cor. Parte E05: Solidez da cor ao manchamento: Ácido",
+      "status": "Cancelada"
+    },
+    {
+      "id": 7,
+      "codigo": "ABNT NBR ISO 105-E06:2009",
+      "descricao": "Têxteis - Ensaios de solidez da cor. Parte E06: Solidez da cor ao manchamento: Álcali",
+      "status": "Cancelada"
+    },
+    {
+      "id": 8,
+      "codigo": "ABNT NBR ISO 105-G01:2009",
+      "descricao": "Têxteis - Ensaios de solidez da cor. Parte G01: Solidez da cor aos óxidos de nitrogênio",
+      "status": "Em Vigor"
+    },
+    {
+      "id": 9,
+      "codigo": "ABNT NBR ISO 105-G02:2009",
+      "descricao": "Têxteis - Ensaios de solidez da cor. Parte G02: Solidez da cor aos fumos de gases queimados",
+      "status": "Em Vigor"
+    },
+    {
+      "id": 10,
+      "codigo": "ABNT NBR ISO 105-X16:2009",
+      "descricao": "Têxteis - Ensaios de solidez da cor. Parte X16: Solidez da cor à fricção - Pequenas áreas",
+      "status": "Em Vigor"
+    }
+  ]
+}
