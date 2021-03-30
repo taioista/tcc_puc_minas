@@ -1,0 +1,14 @@
+{
+  "name": "integracao",
+  "version": "1.0.0",
+  "description": "Neste módulo é utilizada uma biblioteca (JSON-Server) para servir de mock do repositório externo de normas. Essa biblioteca gera uma API Rest a partir do arquivo db.json que contém os dados mock que serão retornados para o módulo do SIGO quando for solicitado.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "json-server": "^0.16.3"
+  }
+}
