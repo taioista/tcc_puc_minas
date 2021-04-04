@@ -6,5 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./norma-list.component.css']
 })
 export class NormaListComponent {
-  title = 'SIGO';
 }

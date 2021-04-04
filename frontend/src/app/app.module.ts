@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NormaListComponent } from './components/norma/norma-list/norma-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NormaListComponent
   ],
   imports: [
     BrowserModule,

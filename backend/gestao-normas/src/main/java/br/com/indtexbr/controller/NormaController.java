@@ -16,8 +16,13 @@ import br.com.indtexbr.domain.Norma;
 import br.com.indtexbr.exception.NormaNotFoundException;
 import br.com.indtexbr.service.NormaService;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
+
 @RestController
-@RequestMapping("/api/normas")
+@RequestMapping("/normas")
+@Api(value = "Normas")
 public class NormaController {
 
   @Autowired
@@ -27,23 +32,27 @@ public class NormaController {
     this.service = normaService;
   }
 
+  @ApiOperation(value = "Retorna todas as normas cadastradas")
   @GetMapping()
-  List<Norma> all() {
+  public List<Norma> all() {
     return service.findAll();
   }
 
+  @ApiOperation(value = "Inclui uma norma")
   @PostMapping()
-  Norma newNorma(@RequestBody final Norma newNorma) {
-    return service.save(newNorma);
+  public Norma incluirNorma(@RequestBody final Norma norma) {
+    return service.save(norma);
   }
 
+  @ApiOperation(value = "Retorna uma norma por Id")
   @GetMapping("/{id}")
-  Norma one(@PathVariable final Long id) {
+  public Norma buscarNormaPorId(@PathVariable final Long id) {
     return service.findById(id).orElseThrow(() -> new NormaNotFoundException(id));
   }
 
+  @ApiOperation(value = "Atualiza os dados de uma norma")
   @PutMapping("/{id}")
-  Norma updateNorma(@RequestBody final Norma normaUpdate, @PathVariable final Long id) {
+  Norma atualizarNorma(@RequestBody final Norma normaUpdate, @PathVariable final Long id) {
     return service.findById(id).map(norma -> {
       norma.setCodigo(normaUpdate.getCodigo());
       norma.setDescricao(normaUpdate.getDescricao());
@@ -54,7 +63,7 @@ public class NormaController {
        return service.save(normaUpdate);
      });
   }
-
+  @ApiOperation(value = "Exclui uma norma previamente cadastrada")
   @DeleteMapping("/{id}")
   void deleteNorma(@PathVariable final Long id) {
     service.deleteById(id);
