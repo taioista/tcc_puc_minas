@@ -1,0 +1,26 @@
+<body>
+    <div id="wrap">
+        <div class="navbar navbar-fixed-top">
+            <!-- Espaço para o cabeçlho -->
+        </div>
+        <div class="navbar-bordless navbar-fixed-top">
+            <div id="barra"></div>
+        </div>
+        <!-- Espaço para o menu -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div id="main-container" class="col-md-10">
+                    <!-- Este container é a área "mutável" da página. O conteúdo será publicado aqui. -->
+                    <router-outlet></router-outlet>
+                    <!-- Fim  do Container -->
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+            <div id="clear"></div>
+        </div>
+        <div id="footer">
+            <!-- Espaço para o rodapé -->
+        </div>
+    </div>
+    </body>
