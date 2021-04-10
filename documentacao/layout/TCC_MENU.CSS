@@ -1,0 +1,59 @@
+
+.backgroundMenu{
+
+    background-image: url("2927262.jpg")
+}
+#logo{
+  
+    display: inline;
+    width: 200px;
+    padding-left: 5%;
+}
+
+		body {
+			padding:0px;
+			margin:0px;
+		}
+ 
+		#menu ul {
+			padding:20px;
+			margin:0px;
+			float: left;
+			background-color:none;
+			list-style:none;
+			font:140% ;
+            padding-left:900px;
+		}
+ 
+		#menu ul li { display: inline; }
+ 
+		#menu ul li a {
+			background-color:none;
+			color:white;
+			text-decoration: none;
+			border-bottom:3px solid #06e9e9;
+			padding: 2px 10px;
+			float:left;
+            padding-left:20px;
+		}
+ 
+		#menu ul li a:hover {
+		    color: #f59300;
+    		border-bottom: 3px solid #14518f;
+		}
+		#tabela{
+
+			color: white;
+			width: 70%;
+			text-align: center;
+			margin: 0 auto;		
+		}
+		h1{
+			text-align: center;
+			color: white;
+		}
+	
+	
+	-->
+
+	
