@@ -1,21 +1,39 @@
-import { Norma } from "../model/model";
-import { HttpClient } from '@angular/common/http';
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { throwError } from "rxjs";
+import { catchError, map } from "rxjs/operators";
+import { Norma } from "../model/model";
 
 @Injectable()
 export class NormaService {
+  baseUrl = "api/normas";
 
-    norma: Norma = new Norma("1","ISO 19238","A NORMA PIPIPI POOPOPOP", new Date(), 0);
-    norma2: Norma = new Norma("1","ISO 19238","A NORMA PIPIPI POOPOPOP", new Date(), 0);
+  constructor(private http: HttpClient) {}
 
-    normas: Norma[] = [this.norma, this.norma2];
-
-  
-    constructor(private http: HttpClient) { }
-  
-    getNormas() : Norma [] {
-      return this.normas;
-    }
-
-
+  public getAll() {
+    console.log(this.baseUrl)
+    return this.http.get(this.baseUrl).pipe(
+      map((response)  => response),
+      catchError((e) => this.handleError(e))
+    );
   }
+
+  public delete(id) {
+    return this.http.delete(this.baseUrl + '/' + id).pipe(
+      map(response => response),
+      catchError((e) => this.handleError(e))
+    );
+  }
+
+  public get(id) {
+    return this.http.get(this.baseUrl + "/" + id).pipe(
+      map((response) => response),
+      catchError((e) => this.handleError(e))
+    );
+  }
+
+  protected handleError(error: Response) {
+    console.log(error);
+    return throwError(error);
+  }
+}

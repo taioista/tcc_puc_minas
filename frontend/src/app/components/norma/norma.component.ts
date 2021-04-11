@@ -44,12 +44,22 @@ export class NormaComponent {
     this.normas = [this.norma, this.norma2];
 
      // this.normas = this.normaService.getNormas(); //.then(data => this.normas = data);
+      this.normas = [];
+      this.getNormas();
 
       this.statuses = [
           {label: 'INSTOCK', value: 'instock'},
           {label: 'LOWSTOCK', value: 'lowstock'},
           {label: 'OUTOFSTOCK', value: 'outofstock'}
       ];
+  }
+
+  getNormas() {
+    this.normaService.getAll().subscribe(response => {
+        Object.values(response).forEach(norma => {
+            this.normas.push(norma);
+        });        
+      });
   }
 
   openNew() {

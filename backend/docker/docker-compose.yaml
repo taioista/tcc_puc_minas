@@ -21,7 +21,7 @@ services:
     ports:
       - 8080:8080
     environment:
-      - NORMA_API_DB_HOST=jdbc:postgresql://postgres 
+      - NORMA_API_DB_HOST=postgres 
       - NORMA_API_DB_PORT=5432 
       - NORMA_API_DB_USERNAME=admin
       - NORMA_API_DB_PASSWORD=admin  
