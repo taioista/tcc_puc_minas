@@ -34,6 +34,8 @@ import { ConsultoriaComponent } from './components/consultoria/consultoria.compo
 import { AppRoutingModule } from './app-routing.module';
 import { ConsultoriaService } from './components/service/consultoria.service';
 import { HomeService } from './components/service/home.service';
+import { ProductComponent } from './components/norma/product.component';
+import { ProductService } from './components/norma/productservice';
 
 @NgModule({
   imports: [
@@ -62,9 +64,9 @@ import { HomeService } from './components/service/home.service';
     ConfirmDialogModule,
     InputTextareaModule
   ],
-  declarations: [ AppComponent, NormaComponent, DetalhaNormaComponent, ConsultoriaComponent ],
+  declarations: [ AppComponent, NormaComponent, DetalhaNormaComponent, ConsultoriaComponent, ProductComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [ MessageService, ConfirmationService, NormaService, ConsultoriaService, HomeService]
+  providers: [ MessageService, ConfirmationService, NormaService, ConsultoriaService, HomeService, ProductService]
 })
 
 export class AppModule { }

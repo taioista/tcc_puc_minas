@@ -13,7 +13,7 @@
         currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
         <ng-template pTemplate="caption">
             <div class="p-d-flex p-ai-center p-jc-between">
-                <h5 class="p-m-0">Manage Normas</h5>
+                <h5 class="p-m-0">Gestão de Normas</h5>
                 <span class="p-input-icon-left">
                     <i class="pi pi-search"></i>
                     <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder="Search..." />
@@ -25,10 +25,10 @@
                 <th style="width: 3rem">
                     <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
                 </th>
-                <th pSortableColumn="price">Código <p-sortIcon field="price"></p-sortIcon></th>
-                <th pSortableColumn="category">Descrição <p-sortIcon field="category"></p-sortIcon></th>
-                <th pSortableColumn="rating">Status <p-sortIcon field="rating"></p-sortIcon></th>
-                <th pSortableColumn="inventoryStatus">Última Atualização <p-sortIcon field="inventoryStatus"></p-sortIcon></th>
+                <th pSortableColumn="codigo">Código <p-sortIcon field="codigo"></p-sortIcon></th>
+                <th pSortableColumn="descricao">Descrição <p-sortIcon field="descricao"></p-sortIcon></th>
+                <th pSortableColumn="status">Status <p-sortIcon field="status"></p-sortIcon></th>
+                <th pSortableColumn="ultimaAtualizacao">Última Atualização <p-sortIcon field="ultimaAtualizacao"></p-sortIcon></th>
                 <th></th>
             </tr>
         </ng-template>
@@ -37,11 +37,11 @@
                 <td>
                     <p-tableCheckbox [value]="norma"></p-tableCheckbox>
                 </td>
-                <td>{{norma.name}}</td>
-                <td>{{norma.price | currency:'USD'}}</td>
-                <td>{{norma.category}}</td>
-                <td><p-rating [ngModel]="norma.rating" [readonly]="true" [cancel]="false"></p-rating></td>
-                <td><span [class]="'norma-badge status-' + (norma.inventoryStatus ? norma.inventoryStatus.toLowerCase() : '')">{{norma.inventoryStatus}}</span></td>
+                <td>{{norma.codigo}}</td>
+                <td>{{norma.descricao}}</td>
+                <td>{{norma.status}}</td>
+                <td>{{noma.ultimaAtualizacao}}</td>
+                <td><span [class]="'norma-badge status-' + (norma.inventoryStatus ? norma.inventoryStatus.toLowerCase() : '')">{{norma.status}}</span></td>
                 <td>
                     <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="editNorma(norma)"></button>
                     <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="deleteNorma(norma)"></button>
@@ -50,7 +50,7 @@
         </ng-template>
         <ng-template pTemplate="summary">
             <div class="p-d-flex p-ai-center p-jc-between">
-                In total there are {{normas ? normas.length : 0 }} normas.
+                No total tem {{normas ? normas.length : 0 }} normas.
             </div>
         </ng-template>
     </p-table>
@@ -59,60 +59,34 @@
 <p-dialog [(visible)]="normaDialog" [style]="{width: '450px'}" header="Norma Details" styleClass="p-fluid">
     <ng-template pTemplate="content">
         <div class="p-field">
-            <label for="name">Name</label>
-            <input type="text" pInputText id="name" [(ngModel)]="norma.name" required autofocus />
-            <small class="p-error" *ngIf="submitted && !norma.name">Name is required.</small>
+            <label for="codigo">Código</label>
+            <input type="text" pInputText id="codigo" [(ngModel)]="norma.codigo" required autofocus />
+            <small class="p-error" *ngIf="submitted && !norma.codigo">Código é obrigatório.</small>
         </div>
         <div class="p-field">
-            <label for="description">Description</label>
-            <textarea id="description" pInputTextarea [(ngModel)]="norma.description" required rows="3" cols="20"></textarea>
+            <label for="descricao">Descrição</label>
+            <textarea id="descricao" pInputTextarea [(ngModel)]="norma.descricao" required rows="3" cols="20"></textarea>
         </div>
         <div class="p-field">
-            <label for="inventoryStatus">Inventory Status</label>
-            <p-dropdown [(ngModel)]="norma.inventoryStatus" inputId="inventoryStatus" [options]="statuses" placeholder="Select">
+            <label for="status">Status</label>
+            <p-dropdown [(ngModel)]="norma.status" inputId="status" [options]="statuses" placeholder="Select">
                 <ng-template let-option pTemplate="item">
                     <span [class]="'norma-badge status-' + option.value">{{option.label}}</span>
                 </ng-template>
             </p-dropdown>
         </div>
 
-        <div class="p-field">
-            <label class="p-mb-3">Category</label>
-            <div class="p-formgrid p-grid">
-                <div class="p-field-radiobutton p-col-6">
-                    <p-radioButton id="category1" name="category" value="Accessories" [(ngModel)]="norma.category"></p-radioButton>
-                    <label for="category1">Accessories</label>
-                </div>
-                <div class="p-field-radiobutton p-col-6">
-                    <p-radioButton id="category2" name="category" value="Clothing" [(ngModel)]="norma.category"></p-radioButton>
-                    <label for="category2">Clothing</label>
-                </div>
-                <div class="p-field-radiobutton p-col-6">
-                    <p-radioButton id="category3" name="category" value="Electronics" [(ngModel)]="norma.category"></p-radioButton>
-                    <label for="category3">Electronics</label>
-                </div>
-                <div class="p-field-radiobutton p-col-6">
-                    <p-radioButton id="category4" name="category" value="Fitness" [(ngModel)]="norma.category"></p-radioButton>
-                    <label for="category4">Fitness</label>
-                </div>
-            </div>
-        </div>
-
         <div class="p-formgrid p-grid">
             <div class="p-field p-col">
-                <label for="price">Price</label>
-                <p-inputNumber id="price" [(ngModel)]="norma.price" mode="currency" currency="USD" locale="en-US"></p-inputNumber>
-            </div>
-            <div class="p-field p-col">
-                <label for="quantity">Quantity</label>
-                <p-inputNumber id="quantity" [(ngModel)]="norma.quantity"></p-inputNumber>
+                <label for="price">Última Atualização</label>
+                <input id="price" [(ngModel)]="norma.ultimaAtualizacao" />
             </div>
         </div>
     </ng-template>
     
     <ng-template pTemplate="footer">
-        <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideDialog()"></button>
-        <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="saveNorma()"></button>
+        <button pButton pRipple label="Cancelar" icon="pi pi-times" class="p-button-text" (click)="hideDialog()"></button>
+        <button pButton pRipple label="Salvar" icon="pi pi-check" class="p-button-text" (click)="saveNorma()"></button>
     </ng-template>
 </p-dialog>
 

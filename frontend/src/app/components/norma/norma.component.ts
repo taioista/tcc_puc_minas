@@ -7,7 +7,7 @@ import { NormaService } from '../service/norma.service';
 @Component({
   selector: 'app-norma',
   templateUrl: './norma.component.html',
-  styleUrls: ['./norma.component.css'],
+  styleUrls: ['./norma.component.scss'],
   styles: [`
       :host ::ng-deep .p-dialog .product-image {
           width: 150px;

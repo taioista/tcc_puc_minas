@@ -5,6 +5,7 @@ import { ConsultoriaComponent } from './components/consultoria/consultoria.compo
 import { DetalhaNormaComponent } from './components/detalhaNorma/detalhaNorma.component';
 import { HomeComponent } from './components/home/home.component';
 import { NormaComponent } from './components/norma/norma.component';
+import { ProductComponent } from './components/norma/product.component';
 
 
 const routes: Routes = [{
@@ -23,6 +24,10 @@ const routes: Routes = [{
   path: "detalhaNorma",
   component: DetalhaNormaComponent
 },
+{
+path: "product",
+component: ProductComponent
+}
 ];
 
 @NgModule({
