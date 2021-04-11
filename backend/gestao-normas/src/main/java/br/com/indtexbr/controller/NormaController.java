@@ -32,7 +32,6 @@ public class NormaController {
     this.service = normaService;
   }
 
-  
   /** 
    * @return List<Norma>
    */
@@ -42,7 +41,6 @@ public class NormaController {
     return service.findAll();
   }
 
-  
   /** 
    * @param norma
    * @return Norma
@@ -52,8 +50,7 @@ public class NormaController {
   public Norma incluirNorma(@RequestBody final Norma norma) {
     return service.save(norma);
   }
-
-  
+ 
   /** 
    * @param id
    * @return Norma
@@ -64,7 +61,6 @@ public class NormaController {
     return service.findById(id).orElseThrow(() -> new NormaNotFoundException(id));
   }
 
-  
   /** 
    * @param normaUpdate
    * @param id

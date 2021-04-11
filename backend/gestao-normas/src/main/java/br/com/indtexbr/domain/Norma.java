@@ -26,6 +26,11 @@ public class Norma implements Serializable{
     this.ultimaAtualizacao = ultimaAtualizacao;
   }
   
+  public Norma(String codigo, String descricao, IndicadorStatusNorma status) {
+    this.codigo = codigo;
+    this.descricao = descricao;
+    this.status = status;
+  }
   
   /** 
    * @return Long
@@ -83,19 +88,59 @@ public class Norma implements Serializable{
     this.status = status;
   }
 
-  
   /** 
    * @return Date
    */
   public Date getUltimaAtualizacao() {
     return ultimaAtualizacao;
   }
-
   
   /** 
    * @param ultimaAtualizacao
    */
   public void setUltimaAtualizacao(Date ultimaAtualizacao) {
     this.ultimaAtualizacao = ultimaAtualizacao;
+  }
+
+  
+  /** 
+   * @return int
+   */
+  @Override
+  public int hashCode() {
+    final int prime = 31;
+    int result = 1;
+    result = prime * result + ((codigo == null) ? 0 : codigo.hashCode());
+    result = prime * result + ((descricao == null) ? 0 : descricao.hashCode());
+    result = prime * result + ((status == null) ? 0 : status.hashCode());
+    return result;
+  }
+
+  /** 
+   * @param obj
+   * @return boolean
+   */
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj)
+      return true;
+    if (obj == null)
+      return false;
+    if (getClass() != obj.getClass())
+      return false;
+    Norma other = (Norma) obj;
+    if (codigo == null) {
+      if (other.codigo != null)
+        return false;
+    } else if (!codigo.equals(other.codigo))
+      return false;
+    if (descricao == null) {
+      if (other.descricao != null)
+        return false;
+    } else if (!descricao.equals(other.descricao))
+      return false;
+    if (status != other.status)
+      return false;
+    return true;
   }
 }

@@ -1,8 +1,13 @@
 package br.com.indtexbr.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public enum IndicadorStatusNorma {
-  EM_VIGOR("Em Vigor"),
-  CANCELADA("Cancelada");
+    @JsonProperty("Em Vigor")
+    EM_VIGOR("Em Vigor"),
+    
+    @JsonProperty("Cancelada")
+    CANCELADA("Cancelada");
 
     private String descricao;
 

@@ -4,18 +4,18 @@
       "id": 1,
       "codigo": "ABNT NBR 15800/2009",
       "descricao": "Vestuário – Referenciais de medidas do corpo humano – Vestibilidade de roupas para bebê e infanto-juvenil",
-      "status": "Em Vigor"
+      "status": "Cancelada"
     },
     {
       "id": 2,
-      "codigo": "ABNT NBR 9925:2009",
-      "descricao": "Tecido plano - Determinação do esgarçamento em uma costura padrão",
+      "codigo": "ABNT 9925",
+      "descricao": "Tecido plano - Determinação do esgarçamento em uma costura padrão Tecido plano - Determinação do esgarçamento em uma costura padrão",
       "status": "Em Vigor"
     },
     {
       "id": 3,
-      "codigo": "ABNT NBR 15778:2009",
-      "descricao": "Uniforme escolar - Requisitos de desempenho e segurança",
+      "codigo": "ABNT NBR 15778",
+      "descricao": "Uniforme - Requisitos de desempenho e segurança Uniforme escolar - Requisitos de desempenho e segurança ",
       "status": "Em Vigor"
     },
     {
@@ -46,7 +46,7 @@
       "id": 8,
       "codigo": "ABNT NBR ISO 105-G01:2009",
       "descricao": "Têxteis - Ensaios de solidez da cor. Parte G01: Solidez da cor aos óxidos de nitrogênio",
-      "status": "Em Vigor"
+      "status": "Cancelada"
     },
     {
       "id": 9,
@@ -56,8 +56,8 @@
     },
     {
       "id": 10,
-      "codigo": "ABNT NBR ISO 105-X16:2009",
-      "descricao": "Têxteis - Ensaios de solidez da cor. Parte X16: Solidez da cor à fricção - Pequenas áreas",
+      "codigo": "105-X16:2009",
+      "descricao": " Ensaios de solidez da cor. Parte X16: Solidez da cor à fricção - Pequenas áreas",
       "status": "Em Vigor"
     }
   ]
