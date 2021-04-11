@@ -21,7 +21,7 @@ const routes: Routes = [{
   component: ConsultoriaComponent
 },
 {
-  path: "detalhaNorma",
+  path: "detalharNorma/:id",
   component: DetalhaNormaComponent
 },
 {

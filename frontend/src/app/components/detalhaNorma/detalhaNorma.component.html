@@ -1,0 +1,33 @@
+
+<p-panel header="Detalhe de Norma">
+    
+    <div class="row">
+        <div class="col-md-3 "><label>Código:</label></div>
+        <div class="col-md-3">{{norma.codigo}}</div>
+        <br>
+        <div class="col-md-3"><label>Descrição:</label></div>
+        <div class="col-md-3" style="text-align: justify;">{{norma.descricao}}</div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-3 "><label>Status:</label></div>
+        <div class="col-md-3">{{norma.status}}</div>
+        <br>
+        <div class="col-md-3"><label>Data da Última Atualização:</label></div>
+        <div class="col-md-3">{{norma.ultimaAtualizacao}}</div>
+    </div>
+    <br>
+    <div class="row">
+        <button pButton style="margin:5px;" pRipple label="Download Documentação da Norma" icon="pi pi-download"></button>
+        <button pButton style="margin:5px;" pRipple label="Solicitar Análise de conformidade" icon="pi pi-eye"></button>
+        <button pButton style="margin:5px;" pRipple label="Enviar Norma por e-mail" icon="pi pi-envelope"></button>
+    </div>
+</p-panel>
+<br>
+<div class="row">
+    <div class="col-md-8"></div>
+    <div class="col-md-4">
+        <button pButton pRipple type="button" label="Voltar" class="p-button-outlined p-button-info"  [routerLink]="['/norma']"></button>
+    </div>
+
+</div>

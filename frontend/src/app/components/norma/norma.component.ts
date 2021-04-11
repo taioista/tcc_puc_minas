@@ -25,6 +25,8 @@ export class NormaComponent {
 
   norma: Norma;
 
+  norma2: Norma;
+
   selectedNormas: Norma[];
 
   submitted: boolean;
@@ -35,7 +37,13 @@ export class NormaComponent {
   constructor(private normaService: NormaService, private messageService: MessageService, private confirmationService: ConfirmationService) { }
 
   ngOnInit() {
-      this.normaService.getNormas(); //.then(data => this.normas = data);
+
+    this.norma = new Norma("1","ISO 19238","A NORMA PIPIPI POOPOPOP", new Date(), 0);
+    this.norma2 = new Norma("1","ISO 19238","A NORMA PIPIPI POOPOPOPert", new Date(), 0);
+
+    this.normas = [this.norma, this.norma2];
+
+     // this.normas = this.normaService.getNormas(); //.then(data => this.normas = data);
 
       this.statuses = [
           {label: 'INSTOCK', value: 'instock'},

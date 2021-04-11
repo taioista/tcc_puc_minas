@@ -36,6 +36,7 @@ import { ConsultoriaService } from './components/service/consultoria.service';
 import { HomeService } from './components/service/home.service';
 import { ProductComponent } from './components/norma/product.component';
 import { ProductService } from './components/norma/productservice';
+import { PanelModule } from 'primeng/panel';
 
 @NgModule({
   imports: [
@@ -62,7 +63,8 @@ import { ProductService } from './components/norma/productservice';
     RadioButtonModule,
     InputNumberModule,
     ConfirmDialogModule,
-    InputTextareaModule
+    InputTextareaModule,
+    PanelModule
   ],
   declarations: [ AppComponent, NormaComponent, DetalhaNormaComponent, ConsultoriaComponent, ProductComponent ],
   bootstrap:    [ AppComponent ],
