@@ -6,5 +6,5 @@ Essa biblioteca gera uma API Rest a partir do arquivo db.json que contém os dad
 # Utilização
 Utilizar os passos abaixo para levantar o serviço:
 
-1- npm install
+1- npm install  
 2- json-server --watch db.json

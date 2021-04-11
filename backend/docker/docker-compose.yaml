@@ -1,0 +1,32 @@
+version: '3'
+services:
+  postgres:
+    image: postgres
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_USER=admin
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+  pgadmin4:
+    image: dpage/pgadmin4
+    ports:
+      - 15432:80
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=pe8542@gmail.com
+      - PGADMIN_DEFAULT_PASSWORD=admin
+  normas:
+    image: sigo/normas-api
+    ports:
+      - 8080:8080
+    environment:
+      - NORMA_API_DB_HOST=jdbc:postgresql://postgres 
+      - NORMA_API_DB_PORT=5432 
+      - NORMA_API_DB_USERNAME=admin
+      - NORMA_API_DB_PASSWORD=admin  
+      - NORMA_API_PORT=8080
+      - NORMA_API_EXTERNA=http://localhost:3000/normas
+volumes:
+  postgres-data:
+    driver: local
