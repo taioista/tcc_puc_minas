@@ -1,16 +1,27 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
+import { ConsultoriaComponent } from './components/consultoria/consultoria.component';
+import { DetalhaNormaComponent } from './components/detalhaNorma/detalhaNorma.component';
 import { HomeComponent } from './components/home/home.component';
-import { NormaListComponent } from './components/norma/norma-list/norma-list.component';
+import { NormaComponent } from './components/norma/norma.component';
+
 
 const routes: Routes = [{
   path: "",
   component: HomeComponent
 },
 {
-  path: "normas/list",
-  component: NormaListComponent
+  path: "norma",
+  component: NormaComponent
+},
+{
+  path: "consultoria",
+  component: ConsultoriaComponent
+},
+{
+  path: "detalhaNorma",
+  component: DetalhaNormaComponent
 },
 ];
 
