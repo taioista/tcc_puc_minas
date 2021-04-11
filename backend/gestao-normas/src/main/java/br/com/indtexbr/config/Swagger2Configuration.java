@@ -14,7 +14,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 public class Swagger2Configuration extends WebMvcConfigurationSupport {
-
+  
+  /** 
+   * @return Docket
+   */
   @Bean
   public Docket greetingApi() {
     return new Docket(DocumentationType.SWAGGER_2)
@@ -23,7 +26,10 @@ public class Swagger2Configuration extends WebMvcConfigurationSupport {
         .build()
         .apiInfo(metaData());
   }
-
+  
+  /** 
+   * @return ApiInfo
+   */
   private ApiInfo metaData() {
     return new ApiInfoBuilder()
         .title("Normas REST API")
@@ -33,7 +39,10 @@ public class Swagger2Configuration extends WebMvcConfigurationSupport {
         .licenseUrl("https://www.apache.org/licenses/LICENSE-2.0\"")
         .build();
   }
-
+  
+  /** 
+   * @param registry
+   */
   @Override
   protected void addResourceHandlers(ResourceHandlerRegistry registry) {
     registry.addResourceHandler("swagger-ui.html")

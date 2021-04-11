@@ -15,18 +15,36 @@ public class NormaService {
   @Autowired
   private NormaRepository normaRepository;
 
+  
+  /** 
+   * @return List<Norma>
+   */
   public List<Norma> findAll() {
     return this.normaRepository.findAll();
   }
 
+  
+  /** 
+   * @param norma
+   * @return Norma
+   */
   public Norma save(Norma norma) {
     return this.normaRepository.save(norma);
   }
 
+  
+  /** 
+   * @param id
+   * @return Optional<Norma>
+   */
   public Optional<Norma> findById(Long id) {
     return this.normaRepository.findById(id);
   }
   
+  
+  /** 
+   * @param id
+   */
   public void deleteById(Long id) {
     this.normaRepository.deleteById(id);
   }

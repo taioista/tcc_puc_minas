@@ -32,24 +32,44 @@ public class NormaController {
     this.service = normaService;
   }
 
+  
+  /** 
+   * @return List<Norma>
+   */
   @ApiOperation(value = "Retorna todas as normas cadastradas")
   @GetMapping()
   public List<Norma> all() {
     return service.findAll();
   }
 
+  
+  /** 
+   * @param norma
+   * @return Norma
+   */
   @ApiOperation(value = "Inclui uma norma")
   @PostMapping()
   public Norma incluirNorma(@RequestBody final Norma norma) {
     return service.save(norma);
   }
 
+  
+  /** 
+   * @param id
+   * @return Norma
+   */
   @ApiOperation(value = "Retorna uma norma por Id")
   @GetMapping("/{id}")
   public Norma buscarNormaPorId(@PathVariable final Long id) {
     return service.findById(id).orElseThrow(() -> new NormaNotFoundException(id));
   }
 
+  
+  /** 
+   * @param normaUpdate
+   * @param id
+   * @return Norma
+   */
   @ApiOperation(value = "Atualiza os dados de uma norma")
   @PutMapping("/{id}")
   Norma atualizarNorma(@RequestBody final Norma normaUpdate, @PathVariable final Long id) {
@@ -63,6 +83,10 @@ public class NormaController {
        return service.save(normaUpdate);
      });
   }
+  
+  /** 
+   * @param id
+   */
   @ApiOperation(value = "Exclui uma norma previamente cadastrada")
   @DeleteMapping("/{id}")
   void deleteNorma(@PathVariable final Long id) {
