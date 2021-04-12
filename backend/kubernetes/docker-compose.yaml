@@ -26,7 +26,7 @@ services:
       - NORMA_API_DB_USERNAME=admin
       - NORMA_API_DB_PASSWORD=admin  
       - NORMA_API_PORT=8080
-      - NORMA_API_EXTERNA=http://localhost:3000/normas
+      - NORMA_API_EXTERNA=http://192.168.68.116:3000/normas
 volumes:
   postgres-data:
     driver: local

@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -f docker-compose.yaml
+    kompose.version: 1.22.0 (HEAD)
+  labels:
+    io.kompose.service: normas
+  name: normas
+spec:
+  type: LoadBalancer 
+  ports:
+    - name: "8080"
+      port: 8080
+      targetPort: 8080
+  selector:
+    io.kompose.service: normas
+status:
+  loadBalancer: {}
