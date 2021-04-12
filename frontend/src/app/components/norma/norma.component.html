@@ -41,7 +41,7 @@
                 <td>{{norma.codigo}}</td>
                 <td>{{norma.descricao}}</td>
                 <td>{{norma.status}}</td>
-                <td>{{norma.ultimaAtualizacao}}</td>
+                <td>{{norma.ultimaAtualizacao | date: 'short'}}</td>
                 <td>
                     <button pButton pRipple icon="pi pi-search" class="p-button-rounded p-mr-2" [routerLink]="['/detalharNorma',norma.id]"></button>
                     <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-warning p-mr-2" (click)="editNorma(norma)"></button>
