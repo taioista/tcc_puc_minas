@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MenuItem, MessageService } from 'primeng/api';
 import { Norma } from '../model/model';
+import { NormaService } from '../service/norma.service';
 
 @Component({
   selector: 'app-detalhaNorma',
@@ -8,15 +10,29 @@ import { Norma } from '../model/model';
   styleUrls: ['./detalhaNorma.component.css']
 })
 export class DetalhaNormaComponent {
+  [x: string]: any;
 
   items: MenuItem[];
   norma: Norma;
-    
-  constructor(private messageService: MessageService) {}
+  sub: any;
+  normas: Norma[];
+
+  constructor(private messageService: MessageService, private router : Router, private route: ActivatedRoute, private normaService: NormaService) {}
   
   ngOnInit() {
-    this.norma = new Norma("1","ISO 19238","A NORMA PIPIPI POOPOPOP", new Date(), 0);
+ 
+    const id = this.route.snapshot.params['id'];
+    this.normaService.getNormas().then(data => this.normas = data);
+
+
+   for(var i = 0; this.normas.length > i; i++) {
+    if(this.normas[i].id == id) {
+      this.norma = this.normas[i];
+    }
+   }
+
   }
 
+  
 
 }

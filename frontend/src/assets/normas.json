@@ -1,0 +1,32 @@
+{
+	"data": [
+		{
+			"id": "1",
+			"codigo": "ABNT NBR ISO 105-X16:2009",
+			"descricao": "Têxteis - Ensaios de solidez da cor. Parte X16: Solidez da cor à fricção - Pequenas áreas",
+			"status": "EM VIGOR",
+			"ultimaAtualizacao": "29/04/2009"
+		},
+        {
+			"id": "2",
+			"codigo": "ABNT NBR 13843:2009",
+			"descricao": "Artigo têxtil hospitalar - Compressa de gaze - Requisitos e métodos de ensaio",
+			"status": "EM VIGOR",
+			"ultimaAtualizacao": "06/02/2009"
+		},
+        {
+			"id": "3",
+			"codigo": "ABNT NBR 12984:2009",
+			"descricao": "Nãotecido - Determinação da massa por unidade de área",
+			"status": "EM VIGOR",
+			"ultimaAtualizacao": "23/01/2009"
+		},
+        {
+			"id": "4",
+			"codigo": "ABNT NBR 14990-6:2009",
+			"descricao": "Sistemas e materiais de embalagem para esterilização de produtos para saúde",
+			"status": "CANCELADA",
+			"ultimaAtualizacao": "05/03/2009"
+		}
+    ]
+}

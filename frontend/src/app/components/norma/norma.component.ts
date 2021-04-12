@@ -18,6 +18,7 @@ import { NormaService } from '../service/norma.service';
   providers: [MessageService,ConfirmationService]
 })
 export class NormaComponent {
+  [x: string]: any;
 
   normaDialog: boolean;
 
@@ -38,14 +39,7 @@ export class NormaComponent {
 
   ngOnInit() {
 
-    this.norma = new Norma("1","ISO 19238","A NORMA PIPIPI POOPOPOP", new Date(), 0);
-    this.norma2 = new Norma("1","ISO 19238","A NORMA PIPIPI POOPOPOPert", new Date(), 0);
-
-    this.normas = [this.norma, this.norma2];
-
-     // this.normas = this.normaService.getNormas(); //.then(data => this.normas = data);
-      this.normas = [];
-      this.getNormas();
+    this.normaService.getNormas().then(data => this.normas = data);
 
       this.statuses = [
           {label: 'INSTOCK', value: 'instock'},

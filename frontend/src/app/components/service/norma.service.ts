@@ -10,6 +10,14 @@ export class NormaService {
 
   constructor(private http: HttpClient) {}
 
+  getNormas() {
+    return this.http.get<any>('assets/normas.json')
+    .toPromise()
+    .then(res => <Norma[]>res.data)
+    .then(data => { return data; });
+  }
+  
+
   public getAll() {
     console.log(this.baseUrl)
     return this.http.get(this.baseUrl).pipe(

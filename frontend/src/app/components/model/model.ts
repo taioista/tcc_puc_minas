@@ -6,7 +6,7 @@ export class Norma {
     id: string;
     codigo: string;
     descricao: string;
-    ultimaAtualizacao: Date;
+    ultimaAtualizacao: string;
     status: number;
 
 }
